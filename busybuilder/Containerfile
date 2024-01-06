@@ -1,0 +1,7 @@
+FROM docker.io/alpine:latest
+
+RUN apk add git alpine-sdk ncurses-dev linux-headers
+RUN mkdir /build
+COPY busybox-config /build/
+COPY build-busybox.sh /build/
+CMD ["sh", "/build/build-busybox.sh"]
